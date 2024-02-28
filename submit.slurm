@@ -2,7 +2,7 @@
 
 #SBATCH -c 4
 #SBATCH --mem=32G
-#SBATCH --time=5:00:00
+#SBATCH --time=10:00:00
 #SBATCH --gres=gpu:1
 #SBATCH --constraint=gpu32
 #SBATCH --mail-type=END,FAIL
@@ -42,7 +42,16 @@ python --version
 echo "BLIP2 Eval Start:"
 
 
-time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path lavis/projects/blip2/eval/caption_coco_opt2.7b_eval.yaml
+echo "Running BLIP2 Retrieval on 6.7B model"
+time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path lavis/projects/blip2/eval/ret_coco_eval.yaml"
+
+
+echo "Running BLIP2 Coco Caption on 6.7b model"
+time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path lavis/projects/blip2/eval/caption_coco_opt6.7b_eval.yaml
+
+
+echo "Running BLIP2 VQAv2 on 6.7B model"
+time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path lavis/projects/blip2/eval/vqav2_zeroshot_opt_eval.yaml"
 
 # You're done!
 echo "Ending script..."
