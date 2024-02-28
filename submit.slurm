@@ -43,7 +43,7 @@ echo "BLIP2 Eval Start:"
 
 
 echo "Running BLIP2 Retrieval on 6.7B model"
-time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path lavis/projects/blip2/eval/ret_coco_eval.yaml"
+time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path lavis/projects/blip2/eval/ret_coco_eval.yaml
 
 
 echo "Running BLIP2 Coco Caption on 6.7b model"
