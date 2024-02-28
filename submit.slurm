@@ -51,7 +51,7 @@ time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path l
 
 
 echo "Running BLIP2 VQAv2 on 6.7B model"
-time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path lavis/projects/blip2/eval/vqav2_zeroshot_opt_eval.yaml"
+time python -m torch.distributed.run --nproc_per_node=1 evaluate.py --cfg-path lavis/projects/blip2/eval/vqav2_zeroshot_opt_eval.yaml
 
 # You're done!
 echo "Ending script..."
