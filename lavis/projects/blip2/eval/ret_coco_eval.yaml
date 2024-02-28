@@ -3,9 +3,15 @@
  # SPDX-License-Identifier: BSD-3-Clause
  # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 
+#model:
+#  arch: blip2_opt
+#  model_type: pretrain_opt6.7b
+#  use_grad_checkpoint: False
+
+
 model:
-  arch: blip2_opt
-  model_type: pretrain_opt6.7b
+  arch: blip2
+  model_type: coco
   use_grad_checkpoint: False
 
 datasets:
